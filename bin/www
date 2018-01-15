@@ -12,8 +12,8 @@ var fs = require('fs')
 var enforceHttps = require('koa-sslify')
 app.use(enforceHttps())
 var options = {
-  key:'',
-  cert:''
+  key:fs.readFileSync('travel.key'),
+  cert:fs.readFileSync('travel.crt')
 }
 /**
  * Get port from environment and store in Express.
